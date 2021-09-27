@@ -15,11 +15,11 @@ public class Piece {
 
     public Piece(Board board) {
         this.board = board;
-        position = null;
+        position = null; // nao precisa atribuir nada, por padrão o java ja coloca valor nulo
     }
 
-    protected Board getBoard() {
-        return board;
+    protected Board getBoard() { //não quero que o board seja acessado pela camda de xadrez, é de uso interno do camada de board
+        return board;  // só pela subclasse da peça
     }
     // não tem o set pois não quero que meu tabuleiro seja alterado
     // tabuleiro só sera acessado pelas subclasses e pelas classes do mesmo package
