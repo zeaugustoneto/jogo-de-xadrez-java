@@ -54,7 +54,7 @@ public class Board {
         
     }
     
-    private boolean positionExists(int row, int column){
+    private boolean positionExists(int row, int column){ //metodo auxiliar do position exists
         return row >= 0 && row < rows && column >= 0 && column < columns;
     }
     public boolean positionExists(Position position){
