@@ -20,3 +20,4 @@ public class ChessException extends BoardException {
     }
     
 }
+ 

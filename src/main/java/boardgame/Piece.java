@@ -9,7 +9,7 @@ package boardgame;
  *
  * @author zeneto
  */
-public class Piece {
+public abstract class Piece {
     protected Position position;
     private Board board;
 
@@ -23,4 +23,21 @@ public class Piece {
     }
     // não tem o set pois não quero que meu tabuleiro seja alterado
     // tabuleiro só sera acessado pelas subclasses e pelas classes do mesmo package
+
+    public abstract boolean[][] possibleMoves();
+    
+    public boolean possibleMove(Position position){
+        return possibleMoves()[position.getRow()][position.getColumn()]; //rook methods = metodo concreto utilizando metodo abstrato (metodo que faz um gancho com a subclasse)
+    }
+    
+    public boolean isThereAnyPossibleMove(){
+        boolean[][] mat = possibleMoves();
+        for (int i = 0; i <mat.length; i++){
+            for (int j = 0 ; j<mat.length; j++){
+                if (mat[i][j]){
+                    return true;
+                }
+            }
+        } return false;
+    }
 }
